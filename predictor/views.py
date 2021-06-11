@@ -41,5 +41,6 @@ def model_form_upload(request):
     return render(request,'music/genreResult.html',{'documents':documents,'form':form})
 
 def recognize_song(request):
-    context = recognize(5)
+    data = recognize(5)
+    context = {'music':data}
     return render(request,'music/RecognizerResult.html',context)
